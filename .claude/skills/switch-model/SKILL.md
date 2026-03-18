@@ -60,11 +60,19 @@ Verify with:
 claude config get model
 ```
 
-### 4. Explain how to activate the change
+### 4. Detect the environment and explain how to activate the change
 
-IMPORTANT: The model change takes effect in the NEXT session, not the current one. Tell the user exactly what to do:
+IMPORTANT: The model change takes effect in the NEXT session, not the current one.
+
+First, detect whether the user is on **mobile/web** or **desktop CLI**:
+- Mobile/web indicators: user mentioned phone/mobile, no terminal access, can't use Ctrl+C, using browser
+- CLI indicators: user is in a terminal, can run commands
+
+Then give the appropriate instructions:
 
 ---
+
+**If on desktop CLI:**
 
 **Model switched to `<MODEL_ID>`.**
 
@@ -73,7 +81,20 @@ To activate the new model while keeping your full conversation history:
 1. Press **Ctrl+C** (or type `/exit`) to end this session
 2. Run `claude --continue` in your terminal to resume with `<MODEL_ID>`
 
-Your entire conversation history will be preserved — Claude will pick up exactly where you left off.
+Your entire conversation history will be preserved.
+
+---
+
+**If on mobile or web browser:**
+
+**Model switched to `<MODEL_ID>`.**
+
+To activate the new model:
+
+1. Tap the **menu / settings icon** (top-right corner) and choose **"End session"** or **"New session"**, OR simply **close this tab/app**
+2. Reopen Claude Code — it will automatically continue your last conversation with `<MODEL_ID>`
+
+If there is no "End session" option, just **close and reopen** the app/tab. Your conversation history is saved automatically.
 
 ---
 
