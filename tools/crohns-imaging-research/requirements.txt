@@ -1,0 +1,21 @@
+# 克罗恩病影像研究工具依赖
+
+# 文献检索
+biopython>=1.83
+arxiv>=2.1.0
+requests>=2.31.0
+pandas>=2.0.0
+
+# 医学影像处理
+pydicom>=2.4.0
+SimpleITK>=2.3.0
+nibabel>=5.2.0
+scikit-image>=0.22.0
+
+# 数值计算 / 可视化
+numpy>=1.26.0
+matplotlib>=3.8.0
+tqdm>=4.66.0
+
+# ARIS 外部模型（可选）
+openai>=1.30.0
